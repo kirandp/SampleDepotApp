@@ -1,0 +1,2 @@
+﻿ $('#cart').replaceWith('<%= escape_javascript(render(@cart)) %>');
+ $('#message').text('Cart emptied successfully');
