@@ -12,6 +12,7 @@ float: left;
 }
 #columns {
 background: #141;
+float: left;
 }
 #main {
 margin-left: 17em;
@@ -28,6 +29,7 @@ width: 16em;
 background: #141;
 }
 #side a {
-color: #bfb;
+color: #bfbf;
 font-size: small;
+
 }

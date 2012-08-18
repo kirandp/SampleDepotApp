@@ -1,5 +1,6 @@
 
 class UsersController < ApplicationController
+before_filter :authorize,:except=>[:new,:create]
   # GET /users
   # GET /users.json
   def index
@@ -41,9 +42,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    puts "$$$$$$$$$$$$$$$$$$$$$user$$$$$$$$$$$$$$$$$$$$$$$$$"
-    puts params[:user]
-	@user = User.new(params[:user])
+    @user = User.new(params[:user])
 	 respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
@@ -51,7 +50,7 @@ class UsersController < ApplicationController
       else
         format.html { render action: "new" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
-          end
+	  end
     end
   end
 
@@ -59,7 +58,6 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
-
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
@@ -76,7 +74,6 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-
     respond_to do |format|
       format.html { redirect_to users_url }
       format.json { head :no_content }

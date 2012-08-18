@@ -12,6 +12,7 @@ float: left;
 }
 #columns {
 background: #141;
+float: left;
 }
 #main {
 margin-left: 17em;
@@ -26,10 +27,12 @@ padding-left: 1em;
 padding-bottom: 1em;
 width: 16em;
 background: #141;
+height: 1200px;
 }
-#side a {
-color: #bfb;
+#columns a {
+color: #b0c4de;
 font-size: medium;
+float: top;
 }
 
 #store .entry form, #store .entry form div {
